@@ -1,10 +1,10 @@
-# 🏥 Healthcare Management API
+# Healthcare Management API
 
 A comprehensive Django REST Framework-based backend system for managing healthcare data. This project allows secure registration, login, and full CRUD operations for patients and doctors with proper authentication. It supports patient-doctor mapping and uses PostgreSQL for efficient and scalable data storage.
 
 ---
 
-## 🚀 Summary
+## Summary
 
 - Robust backend architecture using **Django**, **Django REST Framework**, and **PostgreSQL**
 - Secured authentication via **JWT** using `djangorestframework-simplejwt`
@@ -14,19 +14,19 @@ A comprehensive Django REST Framework-based backend system for managing healthca
 
 ---
 
-## 🔧 Features
+## Features
 
-- ✅ JWT-based user registration and login
-- ✅ Create, retrieve, update, and delete Patients and Doctors
-- ✅ Patient–Doctor relationship mapping
-- ✅ Secured endpoints with authentication permissions
-- ✅ Token Refresh functionality
-- ✅ Clean project structure following best practices
-- ✅ API tested using Postman with access/refresh tokens
+- JWT-based user registration and login
+- Create, retrieve, update, and delete Patients and Doctors
+- Patient–Doctor relationship mapping
+- Secured endpoints with authentication permissions
+- Token Refresh functionality
+- Clean project structure following best practices
+- API tested using Postman with access/refresh tokens
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend Framework:** Django, Django REST Framework
 - **Authentication:** JWT (`djangorestframework-simplejwt`)
@@ -37,29 +37,42 @@ A comprehensive Django REST Framework-based backend system for managing healthca
 
 ---
 
-## 📁 Project Structure
-healthcare_project/
+## Project Structure Overview
+
+```plaintext
+Health-Care/
 │
-├── controller/              # Main application
-│   ├── models.py            # Models: Patient, Doctor, Mapping
-│   ├── views.py             # API views for CRUD operations
-│   ├── serializers.py       # DRF serializers
-│   ├── urls.py              # App-level routing
-│   └── permissions.py       # Custom permissions (if any)
+├── healthcare/
+|   ├── controller
+        ├── __init__.py
+        ├── admin.py
+        ├── apps.py
+        ├── models.py
+        ├── serializers.py
+        ├── tests.py
+        ├── urls.py
+        ├── views.py
+    ├── healthcare
+        ├── __init__.py
+        ├── asgi.py
+        ├── settings.py
+        ├── urls.py
+        ├── wsgi.py
+|   ├── .env
+|   ├── db.sqlite3
+|   ├── manage.py
 │
-├── healthcare_project/      # Project settings
-│   ├── settings.py          # Settings (including JWT, DB setup)
-│   ├── urls.py              # Root URL configuration
-│   └── wsgi.py/asgi.py      # WSGI/ASGI entry points
-│
-├── manage.py                # Django project CLI
+├── README.md
+└── requirements.txt
+```
+---
 
 ## 📦 Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/healthcare-api.git
-cd healthcare-api
+git clone https://github.com/aaarif796/Health-Care.git
+cd Health-Care
 
 # Create a virtual environment & activate it
 python -m venv venv
@@ -123,9 +136,9 @@ Authorization: Bearer <your_access_token>
 
 ---
 
-## 🧪 Testing API Endpoints (Use Postman or any API client)
+## Testing API Endpoints (Use Postman or any API client)
 
-### 👨‍⚕️ Doctor Endpoints
+### Doctor Endpoints
 
 ```http
 GET    /api/doctors/                 # List all doctors
@@ -133,7 +146,7 @@ POST   /api/doctors/                 # Add a new doctor
 GET    /api/doctors/<id>/            # Get specific doctor by ID
 ```
 
-### 🧍 Patient Endpoints
+### Patient Endpoints
 
 ```http
 GET    /api/patients/                # List all patients
@@ -141,21 +154,21 @@ POST   /api/patients/                # Add a new patient
 GET    /api/patients/<id>/           # Get specific patient by ID
 ```
 
-### 🔗 Mapping Endpoints (Patient-Doctor Relation)
+### Mapping Endpoints (Patient-Doctor Relation)
 
 ```http
 GET    /api/mappings/                # List or create patient-doctor mappings
 POST   /api/mappings/                # Create a mapping
-# Body:
+#Body:
 {
-  "patient": <patient_id>,
-  "doctor": <doctor_id>
+  "patient":<patient_id>,
+  "doctor":<doctor_id>
 }
 ```
 
 ---
 
-## ✨ Features
+## Features
 
 - Secure authentication with JWT
 - Modular project structure with Django best practices
@@ -165,23 +178,5 @@ POST   /api/mappings/                # Create a mapping
 
 ---
 
-## 📂 Project Structure Overview
-
-```plaintext
-healthcare_api/
-│
-├── controller/                # Core application
-│   ├── models.py              # Doctor, Patient, Mapping models
-│   ├── serializers.py         # API serializers
-│   ├── views.py               # View logic for API endpoints
-│   ├── urls.py                # App-level routing
-│
-├── healthcare_api/           # Project settings
-│   ├── settings.py
-│   ├── urls.py
-│
-├── manage.py
-└── requirements.txt
-```
 
 ---
