@@ -67,7 +67,7 @@ Health-Care/
 ```
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Clone the repository
@@ -106,7 +106,7 @@ python manage.py runserver
 
 ---
 
-## 🔐 Authentication (JWT)
+## Authentication (JWT)
 
 ```bash
 # Register a new user
